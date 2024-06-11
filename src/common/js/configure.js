@@ -7,6 +7,7 @@ import _ from 'lodash';
 Notes._conf = {};
 
 Notes._defaults = {
+    field: 'notes',
     verbosity: Notes.C.Verbose.CONFIGURE
 };
 

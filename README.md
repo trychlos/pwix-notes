@@ -14,6 +14,12 @@ The package's behavior can be configured through a call to the `Notes.configure(
 
 Known configuration options are:
 
+- `field`
+
+    The name of the field to be added to the collections.
+
+    Defaults to `notes`.
+
 - `verbosity`
 
     Define the expected verbosity level.
@@ -34,18 +40,23 @@ Remind too that Meteor packages are instanciated at application level. They are 
 
 `Notes` provides following items:
 
-### `Notes.envSettings`
+### Functions
 
-A ReactiveVar which is set at startup with the settings for this environment. It contains following keys:
+- `Notes.i18n.namespace()`
 
-- `env`: the name of the running environment from `APP_ENV` environment variable
-- `settings`: the relevant settings read from the APP/private/config/server JSON configuration.
+    Returns the i18n namespace used by the package. Used to add translations at runtime.
+
+    Available both on the client and the server.
+
+- `Notes.schema( [field] )`
+
+    Returns a SimpleSchema instance which describe the schema to be added to the collection.
+
+    Can provide a `field` name, which defaults to the corresponding configured value.
+
+    Available both on the client and the server.
 
 ### Methods
-
-#### `Notes.i18n.namespace()`
-
-Returns the i18n namespace used by the package. Used to add translations at runtime.
 
 ### Blaze components
 
