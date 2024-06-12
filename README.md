@@ -42,6 +42,28 @@ Remind too that Meteor packages are instanciated at application level. They are 
 
 ### Functions
 
+- `Forms.configure()`
+
+    See above.
+
+- `Notes.field( [o] )`
+
+    Returns an object suitable for a Forms.field definition.
+
+    Accepts an object with following keys:
+
+    - `field`: the name of the field in the collection, defaulting to the corresponding configured value.
+
+    - `type`: the type of the field in the collection, defaulting to `String`.
+
+    - `optional`: whether this field is optional, defaulting to `true`.
+
+    - `dt_title`: the title to be displayed in the header of a tabular display, defaulting to the configured value.
+
+    - `dt_template`: the edition template, defaulting to our provided `Notes.template`.
+
+    Available both on the client and the server.
+
 - `Notes.i18n.namespace()`
 
     Returns the i18n namespace used by the package. Used to add translations at runtime.
@@ -52,7 +74,7 @@ Remind too that Meteor packages are instanciated at application level. They are 
 
     Returns a SimpleSchema instance which describe the schema to be added to the collection.
 
-    Can provide a `field` name, which defaults to the corresponding configured value.
+    Accepts a `field` name, which defaults to the corresponding configured value.
 
     Available both on the client and the server.
 
