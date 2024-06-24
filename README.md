@@ -59,14 +59,16 @@ Returns an object suitable for a `Field.Def` definition, as the following defaul
     name: Notes._conf.name,
     type: String,
     optional: true,
-    dt_title: pwixI18n.label( I18N, 'dt_title' ),   // defaulting to 'Notes'
+    dt_title: pwixI18n.label( I18N, 'dt_title' ),       // defaulting to 'Notes'
     dt_template: Meteor.isClient && Template.NotesTd,
     dt_templateContext( rowData ){
         return {
             item: rowData
         };
     },
-    form_title: pwixI18n.label( I18N, 'form_title' )
+    form_title: pwixI18n.label( I18N, 'form_title' ),   // the title of the nav for example
+    form_label: pwixI18n.label( I18N, 'form_label' ),   // the label on the left column of the NotesEdit input table
+    form_placeholder: pwixI18n.label( I18N, 'form_placeholder' )
 ```
 
 The optional argument may override any part of this default.
@@ -103,9 +105,8 @@ The component reacts to each `input` event by trigerring a `notes-data` event wi
 
 ```js
     {
-        ... template_context
+        ...template_context
         content: instance.$( event.target ).val(),  // the current content of the textarea
-        field: this.field,  // the Field.Def field object
     }
 ```
 

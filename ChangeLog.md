@@ -4,13 +4,13 @@
 
 ### 1.0.1-rc
 
-    Release date: 
+    Release date:
 
-    - 
+    - Update README
 
 ### 1.0.0
 
-Release date:
+Release date: 2024- 6-24
 
 - Initial release
 
