@@ -36,6 +36,7 @@ function configure( api ){
     _use( 'pwix:field@1.1.0' );
     _use( 'pwix:i18n@1.5.7' );
     _use( 'pwix:ui-fontawesome6@1.0.0' );
+    _use( 'pwix:ui-utils@1.0.0' );
     _use( 'tmeasday:check-npm-versions@1.0.2 || 2.0.0-beta.0', 'server' );
     api.addFiles( 'src/client/components/NotesEdit/NotesEdit.js', 'client' );
     api.addFiles( 'src/client/components/NotesTd/NotesTd.js', 'client' );

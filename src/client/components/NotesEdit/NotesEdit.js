@@ -18,42 +18,43 @@ Template.NotesEdit.onCreated( function(){
         // have a unique identifier for this component instance
         noteId: Random.id(),
 
-        // advertize of the ExtNotes panel content
-        event( dataContext ){
-            //console.debug( 'dataContext', dataContext );
-            self.$( '.notes-edit' ).trigger( dataContext.event || 'notes-data', {
-                ok: true,
-                ...dataContext.data || {},
-                data: self.$( '.notes-edit textarea' ).val()
-            });
+        // advertize of the NotesEdit panel content
+        advertize( dataContext ){
+            const o = { ...dataContext };
+            o.content = self.$( '.notes-edit textarea' ).val();
+            self.$( '.notes-edit' ).trigger( 'notes-data', o );
         }
     };
 });
 
 Template.NotesEdit.onRendered( function(){
     const self = this;
-
     // init the data and the validity status
-    self.$( '.notes-edit textarea' ).val( Template.currentData().notes || '' );
-    self.PCK.event( Template.currentData());
+    self.PCK.advertize( Template.currentData());
 });
 
 Template.NotesEdit.helpers({
-    // string translation
-    i18n( arg ){
-        return pwixI18n.label( I18N, arg.hash.key );
+    // the label on the left of the textarea
+    label(){
+        return this.field.toForm().label;
     },
     // give a unique identifier to the text area
     noteId(){
         return Template.instance().PCK.noteId;
+    },
+    // a placeholder for the notes
+    placeholder(){
+        return this.field.toForm().placeholder;
     }
 });
 
 Template.NotesEdit.events({
     'clear-panel .notes-edit'( event, instance ){
-        this.notes = '';
+        instance.$( '.notes-edit textarea' ).val( '' );
+        instance.PCK.advertize( this );
     },
+
     'input .notes-edit'( event, instance ){
-        instance.PCK.event( this );
+        instance.PCK.advertize( this );
     }
 });

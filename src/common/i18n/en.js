@@ -6,7 +6,10 @@ Notes.i18n = {
     ... Notes.i18n,
     ... {
         en: {
-            dt_title: 'Notes'
+            dt_title: 'Notes',
+            form_label: 'Notes :',
+            form_placeholder: 'Enter some notes here...',
+            form_title: 'Notes'
         }
     }
 };

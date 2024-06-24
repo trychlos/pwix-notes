@@ -22,13 +22,21 @@ This Meteor package is installable with the usual command:
     import { Notes } from 'meteor/pwix:notes';
 
     // add a standard notes to a collection
-    Notes.field(),
+    //  inside your `Field.Set` definition
+    Notes.fieldDef()
 
     // add several notes
-
-    // have a note indicator in a tabular list
-
-    // using the edition template
+    //  inside your `Field.Set` definition
+    Notes.fieldDef({
+        name: 'adminNotes',
+        dt_title: pwixI18n.label( I18N, 'list.admin_notes_th' ),
+        form_title: pwixI18n.label( I18N, 'tabs.admin_notes_title' )
+    }),
+    Notes.fieldDef({
+        name: 'userNotes',
+        dt_title: pwixI18n.label( I18N, 'list.user_notes_th' ),
+        form_title: pwixI18n.label( I18N, 'tabs.user_notes_title' )
+    })
 ```
 
 ## Provides
@@ -47,7 +55,18 @@ See [below](#configuration).
 
 Returns an object suitable for a `Field.Def` definition, as the following default definition:
 
-```
+```js
+    name: Notes._conf.name,
+    type: String,
+    optional: true,
+    dt_title: pwixI18n.label( I18N, 'dt_title' ),   // defaulting to 'Notes'
+    dt_template: Meteor.isClient && Template.NotesTd,
+    dt_templateContext( rowData ){
+        return {
+            item: rowData
+        };
+    },
+    form_title: pwixI18n.label( I18N, 'form_title' )
 ```
 
 The optional argument may override any part of this default.
@@ -70,11 +89,25 @@ Available both on the client and the server.
 
 ### Blaze components
 
-#### `NotesTh`
-
 #### `NotesTd`
 
+This component is automatically included in the tabular display as soon as you have defined the `Field.Def` field in your `Field.Set`.
+
 #### `NotesEdit`
+
+This component provides a `TEXTAREA` node inside of a `DIV`.
+
+It is meant to be included, for example inside of a tabbed panel.
+
+The component reacts to each `input` event by trigerring a `notes-data` event with following data:
+
+```js
+    {
+        ... template_context
+        content: instance.$( event.target ).val(),  // the current content of the textarea
+        field: this.field,  // the Field.Def field object
+    }
+```
 
 ## Configuration
 
