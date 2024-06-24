@@ -1,6 +1,6 @@
 Package.describe({
     name: 'pwix:notes',
-    version: '1.0.0-rc',
+    version: '1.0.0',
     summary: 'A Meteor package which manages notes',
     git: 'https://github.com/trychlos/pwix-notes.git',
     documentation: 'README.md'
