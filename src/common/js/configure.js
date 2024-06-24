@@ -8,7 +8,6 @@ Notes._conf = {};
 
 Notes._defaults = {
     name: 'notes',
-    dt_title: 'Notes',
     verbosity: Notes.C.Verbose.CONFIGURE
 };
 

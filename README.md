@@ -70,11 +70,11 @@ Available both on the client and the server.
 
 ### Blaze components
 
-#### `noteTabularHeader`
+#### `NotesTh`
 
-#### `noteTabularRow`
+#### `NotesTd`
 
-#### `notePanel`
+#### `NotesEdit`
 
 ## Configuration
 
@@ -82,7 +82,7 @@ The package's behavior can be configured through a call to the `Notes.configure(
 
 Known configuration options are:
 
-- `field`
+- `name`
 
     The name of the field to be added to the collections.
 
