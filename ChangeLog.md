@@ -7,6 +7,8 @@
     Release date:
 
     - Update README
+    - Center notes indicator
+    - Fix HTML code of NotesTd component
 
 ### 1.0.0
 

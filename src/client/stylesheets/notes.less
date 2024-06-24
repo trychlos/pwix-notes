@@ -11,8 +11,13 @@
         }
     }
 }
-.notes-td {
-    .notes-set {
-        filter: invert(21%) sepia(19%) saturate(353%) hue-rotate(169deg) brightness(89%) contrast(90%);     // --bs-gray-800
-    }
+.notes-td.notes-set {
+    filter: invert(21%) sepia(19%) saturate(353%) hue-rotate(169deg) brightness(89%) contrast(90%);     // --bs-gray-800
+}
+td.dt-center .notes-td {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    height: 1.875em;
 }

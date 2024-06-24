@@ -20,6 +20,7 @@ Notes.defaultFieldDef = {
             item: rowData
         };
     },
+    dt_className: 'dt-center',
     form_title: pwixI18n.label( I18N, 'form_title' ),
     form_label: pwixI18n.label( I18N, 'form_label' ),
     form_placeholder: pwixI18n.label( I18N, 'form_placeholder' )
