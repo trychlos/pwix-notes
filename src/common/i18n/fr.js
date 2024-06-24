@@ -6,6 +6,7 @@ Notes.i18n = {
     ... Notes.i18n,
     ... {
         fr: {
+            dt_title: 'Notes'
         }
     }
 };

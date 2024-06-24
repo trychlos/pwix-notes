@@ -34,7 +34,12 @@ function configure( api ){
     _use( 'ecmascript' );
     _use( 'less@4.0.0', 'client' );
     _use( 'mongo@1.16.1 || 2.0.0-rc300.2' );
+    _use( 'pwix:field@1.1.0' );
+    _use( 'pwix:ui-fontawesome6@1.0.0' );
     _use( 'tmeasday:check-npm-versions@1.0.2 || 2.0.0-beta.0', 'server' );
+    api.addFiles( 'src/client/components/NotesEdit/NotesEdit.js', 'client' );
+    api.addFiles( 'src/client/components/NotesTd/NotesTd.js', 'client' );
+    api.addFiles( 'src/client/components/NotesTh/NotesTh.js', 'client' );
 }
 
 // NPM dependencies are checked in /src/server/js/check_npms.js

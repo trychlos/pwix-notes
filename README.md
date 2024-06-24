@@ -22,6 +22,7 @@ This Meteor package is installable with the usual command:
     import { Notes } from 'meteor/pwix:notes';
 
     // add a standard notes to a collection
+    Notes.field(),
 
     // add several notes
 
@@ -42,21 +43,14 @@ The exported `Notes` global object provides following items:
 
 See [below](#configuration).
 
-##### `Notes.field( [o] )`
+##### `Notes.fieldDef( [o] )`
 
-Returns an object suitable for a Forms.field definition.
+Returns an object suitable for a `Field.Def` definition, as the following default definition:
 
-Accepts an object with following keys:
+```
+```
 
-- `field`: the name of the field in the collection, defaulting to the corresponding configured value.
-
-- `type`: the type of the field in the collection, defaulting to `String`.
-
-- `optional`: whether this field is optional, defaulting to `true`.
-
-- `dt_title`: the title to be displayed in the header of a tabular display, defaulting to the configured value.
-
-- `dt_template`: the edition template, defaulting to our provided `Notes.template`.
+The optional argument may override any part of this default.
 
 Available both on the client and the server.
 
