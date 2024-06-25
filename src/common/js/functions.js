@@ -10,7 +10,7 @@ import { pwixI18n } from 'meteor/pwix:i18n';
  * Default Field.Def definition
  */
 Notes.defaultFieldDef = {
-    name: Notes._conf.name,
+    name: Notes.configure().name,
     type: String,
     optional: true,
     dt_title: pwixI18n.label( I18N, 'dt_title' ),

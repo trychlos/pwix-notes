@@ -2,13 +2,14 @@
 
 ## ChangeLog
 
-### 1.0.1-rc
+### 1.1.0-rc
 
     Release date:
 
     - Update README
     - Center notes indicator
     - Fix HTML code of NotesTd component
+    - Notes.configure() becomes a reactive data source, bumping minor candidate version number
 
 ### 1.0.0
 

@@ -56,7 +56,7 @@ See [below](#configuration).
 Returns an object suitable for a `Field.Def` definition, as the following default definition:
 
 ```js
-    name: Notes._conf.name,
+    name: Notes.configure().name,
     type: String,
     optional: true,
     dt_title: pwixI18n.label( I18N, 'dt_title' ),       // defaulting to 'Notes'
@@ -137,6 +137,8 @@ Known configuration options are:
 Please note that `Notes.configure()` method should be called in the same terms both in client and server sides.
 
 Remind too that Meteor packages are instanciated at application level. They are so only configurable once, or, in other words, only one instance has to be or can be configured. Addtionnal calls to `Notes.configure()` will just override the previous one. You have been warned: **only the application should configure a package**.
+
+`Notes.configure()` is a reactive data source.
 
 ## NPM peer dependencies
 

@@ -1,6 +1,6 @@
 Package.describe({
     name: 'pwix:notes',
-    version: '1.0.1-rc',
+    version: '1.1.0-rc',
     summary: 'A Meteor package which manages notes',
     git: 'https://github.com/trychlos/pwix-notes.git',
     documentation: 'README.md'
@@ -37,7 +37,9 @@ function configure( api ){
     _use( 'pwix:i18n@1.5.7' );
     _use( 'pwix:ui-fontawesome6@1.0.0' );
     _use( 'pwix:ui-utils@1.0.0' );
+    _use( 'reactive-var' );
     _use( 'tmeasday:check-npm-versions@1.0.2 || 2.0.0-beta.0', 'server' );
+    _use( 'tracker' );
     api.addFiles( 'src/client/components/NotesEdit/NotesEdit.js', 'client' );
     api.addFiles( 'src/client/components/NotesTd/NotesTd.js', 'client' );
 }
