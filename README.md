@@ -47,7 +47,7 @@ The exported `Notes` global object provides following items:
 
 #### Functions
 
-##### `Forms.configure()`
+##### `Notes.configure()`
 
 See [below](#configuration).
 
@@ -66,9 +66,9 @@ Returns an object suitable for a `Field.Def` definition, as the following defaul
             item: rowData
         };
     },
-    form_title: pwixI18n.label( I18N, 'form_title' ),   // the title of the nav for example
-    form_label: pwixI18n.label( I18N, 'form_label' ),   // the label on the left column of the NotesEdit input table
-    form_placeholder: pwixI18n.label( I18N, 'form_placeholder' )
+    form_title: pwixI18n.label( I18N, 'form_title' ),               // to caller disposition, the title of a nav tab for example
+    form_label: pwixI18n.label( I18N, 'form_label' ),               // the label on the left column of the NotesEdit input table
+    form_placeholder: pwixI18n.label( I18N, 'form_placeholder' )    // the corresponding placeholder
 ```
 
 The optional argument may override any part of this default.
@@ -78,14 +78,6 @@ Available both on the client and the server.
 ##### `Notes.i18n.namespace()`
 
 Returns the i18n namespace used by the package. Used to add translations at runtime.
-
-Available both on the client and the server.
-
-##### `Notes.schema( [field] )`
-
-Returns a SimpleSchema instance which describe the schema to be added to the collection.
-
-Accepts a `field` name, which defaults to the corresponding configured value.
 
 Available both on the client and the server.
 
