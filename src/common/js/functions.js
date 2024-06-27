@@ -27,7 +27,7 @@ Notes.defaultFieldDef = {
 };
 
 /**
- * @summary Provide a Forms-valid field definition
+ * @summary Provide a 'Field.Def'-valid field definition
  * @param {Object} arg an optional object to configure the field
  * @returns {Object} an object suitable to the Field.Def instanciation
  */

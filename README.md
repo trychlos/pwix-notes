@@ -73,7 +73,7 @@ Returns an object suitable for a `Field.Def` definition, as the following defaul
 
 The optional argument may override any part of this default.
 
-Available both on the client and the server.
+This function MUST be called from common code.
 
 ##### `Notes.i18n.namespace()`
 
