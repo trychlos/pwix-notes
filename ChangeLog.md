@@ -2,9 +2,9 @@
 
 ## ChangeLog
 
-### 1.1.0-rc
+### 1.1.0
 
-    Release date:
+    Release date: 2024- 6-27
 
     - Update README
     - Center notes indicator
@@ -19,4 +19,4 @@ Release date: 2024- 6-24
 
 ---
 P. Wieser
-- Last updated on 2024, Jun. 24th
+- Last updated on 2024, Jun. 27th
