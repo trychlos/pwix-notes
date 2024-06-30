@@ -30,19 +30,35 @@ Template.NotesEdit.onCreated( function(){
         // update the item
         updateItem( dataContext ){
             let item = dataContext.item;
+            let isRv = false;
             if( item instanceof ReactiveVar ){
                 item = item.get();
+                isRv = true;
             }
             const field = dataContext.field;
             item[field.name()] = self.$( '.notes-edit textarea' ).val();
+            if( isRv ){
+                dataContext.item.set( item );
+            }
         }
     };
 });
 
 Template.NotesEdit.onRendered( function(){
     const self = this;
+
     // init the data and the validity status
     self.PCK.advertize( Template.currentData());
+
+    // setup the area context
+    self.autorun(() => {
+        let item = Template.currentData().item;
+        if( item instanceof ReactiveVar ){
+            item = item.get();
+        }
+        const field = Template.currentData().field;
+        self.$( '.notes-edit textarea' ).val( item[field.name()] );
+    });
 });
 
 Template.NotesEdit.helpers({

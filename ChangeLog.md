@@ -7,6 +7,7 @@
     Release date:
 
     - Auto update the provided item on each user input, bumping minor candidate version number
+    - Auto initialize the input area from the provided item
     - Improve documentation
 
 ### 1.1.0
