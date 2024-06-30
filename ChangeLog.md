@@ -2,11 +2,12 @@
 
 ## ChangeLog
 
-### 1.1.1-rc
+### 1.2.0-rc
 
-    Release date: 
+    Release date:
 
-    - 
+    - Auto update the provided item on each user input, bumping minor candidate version number
+    - Improve documentation
 
 ### 1.1.0
 

@@ -6,7 +6,7 @@ A Meteor package which manages notes:
 
 - add a SimpleSchema to the collection
 - provide a template to manage notes indicator in a tabular list
-- provide a template to enter notes as an input panel
+- provide a template to enter notes as an input panel.
 
 ## Installation
 
@@ -101,6 +101,14 @@ The component reacts to each `input` event by trigerring a `notes-data` event wi
         content: instance.$( event.target ).val(),  // the current content of the textarea
     }
 ```
+
+More, the component auto-updates the provided item.
+
+The provided data context must include:
+
+- `item`: the edited document, either a raw document or a ReactiveVar
+
+- `field`: the `Field.Def` definition of the field
 
 ## Configuration
 

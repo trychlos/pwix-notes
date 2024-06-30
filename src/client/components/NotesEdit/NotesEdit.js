@@ -2,12 +2,14 @@
  * /imports/common/init/NotesEdit.js
  *
  * Parms:
+ * - item: the edited document, either a raw document or a ReactiveVar
+ * - field: the Field.Def definition of the field
  */
 
 import _ from 'lodash';
 
-import { pwixI18n } from 'meteor/pwix:i18n';
 import { Random } from 'meteor/random';
+import { ReactiveVar } from 'meteor/reactive-var';
 
 import './NotesEdit.html';
 
@@ -23,6 +25,16 @@ Template.NotesEdit.onCreated( function(){
             const o = { ...dataContext };
             o.content = self.$( '.notes-edit textarea' ).val();
             self.$( '.notes-edit' ).trigger( 'notes-data', o );
+        },
+
+        // update the item
+        updateItem( dataContext ){
+            let item = dataContext.item;
+            if( item instanceof ReactiveVar ){
+                item = item.get();
+            }
+            const field = dataContext.field;
+            item[field.name()] = self.$( '.notes-edit textarea' ).val();
         }
     };
 });
@@ -55,6 +67,7 @@ Template.NotesEdit.events({
     },
 
     'input .notes-edit'( event, instance ){
+        instance.PCK.updateItem( this );
         instance.PCK.advertize( this );
     }
 });
