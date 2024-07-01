@@ -2,9 +2,9 @@
 
 ## ChangeLog
 
-### 1.2.0-rc
+### 1.2.0
 
-    Release date:
+    Release date: 2024- 7- 1
 
     - Auto update the provided item on each user input, bumping minor candidate version number
     - Auto initialize the input area from the provided item
@@ -27,4 +27,4 @@ Release date: 2024- 6-24
 
 ---
 P. Wieser
-- Last updated on 2024, Jun. 27th
+- Last updated on 2024, Jul. 1st
