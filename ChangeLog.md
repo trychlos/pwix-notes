@@ -4,9 +4,9 @@
 
 ### 1.2.1-rc
 
-    Release date: 
+    Release date:
 
-    - 
+    - Protect NotesTd helper against undefined values
 
 ### 1.2.0
 
