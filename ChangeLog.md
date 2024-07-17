@@ -2,9 +2,9 @@
 
 ## ChangeLog
 
-### 1.2.1-rc
+### 1.2.1
 
-    Release date:
+    Release date: 2024- 7-17
 
     - Protect NotesTd helper against undefined values
 
@@ -33,4 +33,4 @@ Release date: 2024- 6-24
 
 ---
 P. Wieser
-- Last updated on 2024, Jul. 1st
+- Last updated on 2024, Jul. 17th
