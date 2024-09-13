@@ -23,7 +23,7 @@ Template.NotesEdit.onCreated( function(){
         // advertize of the NotesEdit panel content
         advertize( dataContext ){
             const o = { ...dataContext };
-            o.content = self.$( '.notes-edit textarea' ).val();
+            o.content = self.$( '.notes-edit textarea' ).val() || null;
             self.$( '.notes-edit' ).trigger( 'notes-data', o );
         },
 
@@ -36,7 +36,9 @@ Template.NotesEdit.onCreated( function(){
                 isRv = true;
             }
             const field = dataContext.field;
-            item[field.name()] = self.$( '.notes-edit textarea' ).val();
+            const value = self.$( '.notes-edit textarea' ).val();
+            item[field.name()] = value;
+            //console.debug( field.name(), value, 'item', item[field.name()] );
             if( isRv ){
                 dataContext.item.set( item );
             }
@@ -57,7 +59,7 @@ Template.NotesEdit.onRendered( function(){
             item = item.get();
         }
         const field = Template.currentData().field;
-        self.$( '.notes-edit textarea' ).val( item[field.name()] );
+        self.$( '.notes-edit textarea' ).val( item[field.name()] || '' );
     });
 });
 
