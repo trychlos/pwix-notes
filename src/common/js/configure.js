@@ -7,7 +7,6 @@ import _ from 'lodash';
 import { ReactiveVar } from 'meteor/reactive-var';
 
 let _conf = {};
-
 Notes._conf = new ReactiveVar( _conf );
 
 Notes._defaults = {
@@ -23,7 +22,7 @@ Notes._defaults = {
  */
 Notes.configure = function( o ){
     if( o && _.isObject( o )){
-        _.merge( _conf, Notes._defaults, o );
+        _conf = _.merge( Notes._defaults, _conf, o );
         Notes._conf.set( _conf );
         _verbose( Notes.C.Verbose.CONFIGURE, 'pwix:notes configure() with', o );
     }
@@ -31,5 +30,5 @@ Notes.configure = function( o ){
     return Notes._conf.get();
 }
 
-_.merge( _conf, Notes._defaults );
+_conf = _.merge( {}, Notes._defaults );
 Notes._conf.set( _conf );
