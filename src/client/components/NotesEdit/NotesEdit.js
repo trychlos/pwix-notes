@@ -23,8 +23,8 @@ Template.NotesEdit.onCreated( function(){
         // advertize of the NotesEdit panel content
         advertize( dataContext ){
             const o = { ...dataContext };
-            o.content = self.$( '.notes-edit textarea' ).val() || null;
-            self.$( '.notes-edit' ).trigger( 'notes-data', o );
+            o.content = self.$( '.NotesEdit textarea' ).val() || null;
+            self.$( '.NotesEdit' ).trigger( 'notes-data', o );
         },
 
         // update the item
@@ -36,7 +36,7 @@ Template.NotesEdit.onCreated( function(){
                 isRv = true;
             }
             const field = dataContext.field;
-            const value = self.$( '.notes-edit textarea' ).val();
+            const value = self.$( '.NotesEdit textarea' ).val();
             item[field.name()] = value;
             //console.debug( field.name(), value, 'item', item[field.name()] );
             if( isRv ){
@@ -59,7 +59,7 @@ Template.NotesEdit.onRendered( function(){
             item = item.get();
         }
         const field = Template.currentData().field;
-        self.$( '.notes-edit textarea' ).val( item[field.name()] || '' );
+        self.$( '.NotesEdit textarea' ).val( item[field.name()] || '' );
     });
 });
 
@@ -79,12 +79,12 @@ Template.NotesEdit.helpers({
 });
 
 Template.NotesEdit.events({
-    'clear-panel .notes-edit'( event, instance ){
-        instance.$( '.notes-edit textarea' ).val( '' );
+    'clear-panel .NotesEdit'( event, instance ){
+        instance.$( '.NotesEdit textarea' ).val( '' );
         instance.PCK.advertize( this );
     },
 
-    'input .notes-edit'( event, instance ){
+    'input .NotesEdit'( event, instance ){
         instance.PCK.updateItem( this );
         instance.PCK.advertize( this );
     }

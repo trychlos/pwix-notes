@@ -7,6 +7,7 @@
     Release date: 
 
     - Fix configuration overrides
+    - Fix the class names of the NotesEdit and NotesTd components
 
 ### 1.2.1
 
