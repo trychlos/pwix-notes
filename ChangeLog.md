@@ -2,9 +2,9 @@
 
 ## ChangeLog
 
-### 1.2.2-rc
+### 1.2.2
 
-    Release date: 
+    Release date: 2024-10- 4
 
     - Fix configuration overrides
     - Fix the class names of the NotesEdit and NotesTd components
@@ -40,4 +40,4 @@ Release date: 2024- 6-24
 
 ---
 P. Wieser
-- Last updated on 2024, Jul. 17th
+- Last updated on 2024, Oct. 4th
