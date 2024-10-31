@@ -6,7 +6,7 @@
 
     Release date: 
 
-    - 
+    - Fix spelling
 
 ### 1.2.2
 

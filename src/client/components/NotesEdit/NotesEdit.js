@@ -20,8 +20,8 @@ Template.NotesEdit.onCreated( function(){
         // have a unique identifier for this component instance
         noteId: Random.id(),
 
-        // advertize of the NotesEdit panel content
-        advertize( dataContext ){
+        // advertise of the NotesEdit panel content
+        advertise( dataContext ){
             const o = { ...dataContext };
             o.content = self.$( '.NotesEdit textarea' ).val() || null;
             self.$( '.NotesEdit' ).trigger( 'notes-data', o );
@@ -50,7 +50,7 @@ Template.NotesEdit.onRendered( function(){
     const self = this;
 
     // init the data and the validity status
-    self.PCK.advertize( Template.currentData());
+    self.PCK.advertise( Template.currentData());
 
     // setup the area context
     self.autorun(() => {
@@ -81,11 +81,11 @@ Template.NotesEdit.helpers({
 Template.NotesEdit.events({
     'clear-panel .NotesEdit'( event, instance ){
         instance.$( '.NotesEdit textarea' ).val( '' );
-        instance.PCK.advertize( this );
+        instance.PCK.advertise( this );
     },
 
     'input .NotesEdit'( event, instance ){
         instance.PCK.updateItem( this );
-        instance.PCK.advertize( this );
+        instance.PCK.advertise( this );
     }
 });
