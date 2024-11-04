@@ -38,7 +38,7 @@ Template.NotesEdit.onCreated( function(){
             const field = dataContext.field;
             const value = self.$( '.NotesEdit textarea' ).val();
             item[field.name()] = value;
-            //console.debug( field.name(), value, 'item', item[field.name()] );
+            //console.debug( field.name(), value, 'item', item[field.name()], 'isRv', isRv );
             if( isRv ){
                 dataContext.item.set( item );
             }

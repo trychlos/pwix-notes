@@ -7,6 +7,7 @@
     Release date: 
 
     - Fix spelling
+    - Improve a debug message
 
 ### 1.2.2
 
