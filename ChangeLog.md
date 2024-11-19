@@ -2,9 +2,9 @@
 
 ## ChangeLog
 
-### 1.2.3-rc
+### 1.2.3
 
-    Release date: 
+    Release date: 2024-11-19
 
     - Fix spelling
     - Improve a debug message
@@ -47,4 +47,4 @@ Release date: 2024- 6-24
 
 ---
 P. Wieser
-- Last updated on 2024, Oct. 4th
+- Last updated on 2024, Nov. 19th
